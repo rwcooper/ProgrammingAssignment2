@@ -2,7 +2,7 @@
 ## 2016 December
 ## 
 ## These function take the inverse of a matrix and cache the result making
-## it available for recall using less system resources.
+## it available for recall thereby using less system resources.
 ##
 ## This function takes a matrix and caches in inverse of the matrix along
 ## with the function environment
@@ -22,7 +22,8 @@ makeCacheMatrix <- function(x = matrix()) {
 } # makeCacheMatrix function end
 
 
-## This function returns the inverse of the matrix previously cached
+## This function returns the inverse of the matrix previously cached if it is
+## present, otherwise, it calculates the inverse on its own.
 
 cacheSolve <- function(x=matrix(), ...) {
   m <- x$getmatrix()
@@ -34,4 +35,4 @@ cacheSolve <- function(x=matrix(), ...) {
   m <- solve(matrix, ...)
   x$setmatrix(m)
   m ## Return a matrix that is the inverse of 'x'
-}
+} # end of cacheSolve
